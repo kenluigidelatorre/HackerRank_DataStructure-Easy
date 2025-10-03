@@ -1,0 +1,3 @@
+This program removes duplicates from a sorted singly linked list by scanning through the list and comparing each node with its next node. 
+When two consecutive nodes have the same value, it skips the duplicate by linking the current node directly to the node after the duplicate, 
+effectively removing it. This process continues until all duplicates are removed, resulting in a list where each value appears only once.
