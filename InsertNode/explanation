@@ -1,0 +1,3 @@
+This program builds a sorted doubly linked list from input, then inserts a new value in its correct position 
+using `sortedInsert` to keep the list sorted. It adjusts the node pointers properly whether inserting at the 
+start, middle, or end. After insertion, it prints the updated list for each test case.
