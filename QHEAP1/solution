@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+class Solution {
+    static void Main(String[] args) {
+        int Q = int.Parse(Console.ReadLine()); // number of queries
+        var heap = new SortedSet<int>();       // keeps elements sorted
+        var output = new List<int>();          // store results for type 3 queries
+
+        for (int i = 0; i < Q; i++)
+        {
+            string[] query = Console.ReadLine().Split();
+            int type = int.Parse(query[0]);
+
+            if (type == 1) // Insert
+            {
+                int v = int.Parse(query[1]);
+                heap.Add(v);
+            }
+            else if (type == 2) // Delete
+            {
+                int v = int.Parse(query[1]);
+                heap.Remove(v);
+            }
+            else if (type == 3) // Print minimum
+            {
+                output.Add(heap.Min);
+            }
+        }
+
+        // Print all results
+        Console.WriteLine(string.Join("\n", output));
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
+    }
+}
