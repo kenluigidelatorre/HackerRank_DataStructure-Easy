@@ -1,0 +1,3 @@
+This program manages a list of sequences and processes queries that either add numbers to a sequence
+or retrieve values from it. The sequence chosen depends on the last retrieved result, making the queries
+dynamic. It returns all retrieved values as the output.
