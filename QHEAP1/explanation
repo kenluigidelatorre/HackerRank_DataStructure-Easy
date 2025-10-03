@@ -1,0 +1,3 @@
+This program works like a box where you can add numbers, remove specific ones, or check 
+the smallest number left. We use a `SortedSet` since it keeps numbers sorted automatically, 
+making it easy to add, delete, and quickly get the minimum when asked.
