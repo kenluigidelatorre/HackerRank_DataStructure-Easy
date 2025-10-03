@@ -1,0 +1,4 @@
+This program adjusts three stacks of cylinders to be the same height by repeatedly removing cylinders from the top 
+of the tallest stack. It calculates the total height of each stack, then removes cylinders one by one until all 
+three stacks are equal or one runs out. The program reads the stacks from input, processes them with the `equalStacks` 
+method, and outputs the maximum possible equal height.
