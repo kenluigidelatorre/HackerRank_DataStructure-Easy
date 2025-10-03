@@ -1,0 +1,3 @@
+This program reads a list of integers from the input, reverses the order of the elements 
+in the list, and then outputs the reversed list. It does this by swapping elements from 
+the start and end moving towards the middle.
