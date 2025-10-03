@@ -1,0 +1,2 @@
+This program builds a singly linked list by inserting nodes at the tail one by one. It reads a count of values, 
+then inserts each value at the end of the list. Finally, it prints the entire list, each element on a new line.
