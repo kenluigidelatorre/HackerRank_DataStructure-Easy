@@ -1,0 +1,80 @@
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Result
+{
+
+    /*
+     * Complete the 'getMax' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts STRING_ARRAY operations as parameter.
+     */
+
+    public static List<int> getMax(List<string> operations)
+    {
+    Stack<int> mainStack = new Stack<int>();
+    Stack<int> maxStack = new Stack<int>();
+    List<int> result = new List<int>();
+
+    foreach (var op in operations)
+    {
+        if (op.StartsWith("1"))
+        {
+            int val = int.Parse(op.Split(' ')[1]);
+            mainStack.Push(val);
+            if (maxStack.Count == 0 || val >= maxStack.Peek())
+                maxStack.Push(val);
+        }
+        else if (op == "2")
+        {
+            int popped = mainStack.Pop();
+            if (popped == maxStack.Peek())
+                maxStack.Pop();
+        }
+        else if (op == "3")
+        {
+            result.Add(maxStack.Peek());
+        }
+    }
+
+    return result;
+    }
+
+}
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        int n = Convert.ToInt32(Console.ReadLine().Trim());
+
+        List<string> ops = new List<string>();
+
+        for (int i = 0; i < n; i++)
+        {
+            string opsItem = Console.ReadLine();
+            ops.Add(opsItem);
+        }
+
+        List<int> res = Result.getMax(ops);
+
+        textWriter.WriteLine(String.Join("\n", res));
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}
