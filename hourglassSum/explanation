@@ -1,0 +1,3 @@
+This program finds the maximum hourglass sum in a 6x6 2D array. It checks all possible hourglass shapes
+(3 rows by 3 columns with a middle element on the second row), calculates their sums, and returns the 
+highest one found. The main method reads the input, calls the calculation, and prints the result.
