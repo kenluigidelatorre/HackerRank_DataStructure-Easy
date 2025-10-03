@@ -1,0 +1,4 @@
+This program takes two sorted singly linked lists and merges them into one sorted linked list. It does this by 
+comparing the current nodes of both lists, linking the smaller one to the new list, and moving forward in that 
+list. This process continues until all nodes from both lists are added, producing a single, fully sorted linked l
+ist.
