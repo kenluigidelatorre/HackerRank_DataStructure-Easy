@@ -1,0 +1,3 @@
+This program reverses a singly linked list by walking through each node and redirecting 
+its pointer to the previous node, using three pointers to keep track of progress, and 
+finally returns the new head of the reversed list.
