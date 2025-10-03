@@ -1,0 +1,3 @@
+This program rotates a list of integers to the left by a given number of positions d. It does this by slicing the list 
+at the dth index and concatenating the two parts in reverse order, effectively shifting elements left and wrapping the 
+start to the end. The rotated list is then printed.
