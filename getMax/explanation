@@ -1,0 +1,4 @@
+The getMax function handles stack operations and returns the max values during each "3" command. It uses 
+two stacks: one for all elements and one to track the current maximum. When pushing, it updates the max 
+stack if needed; when popping, it removes the max if it's the same as the popped value. This keeps the 
+current maximum on top of the max stack for quick access.
