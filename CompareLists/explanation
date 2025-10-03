@@ -1,0 +1,2 @@
+We traverse both lists node by node, comparing their data. If any node's data differs,
+we return false. If both lists end together, they are identical; if one is longer, return false.
