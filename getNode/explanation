@@ -1,0 +1,3 @@
+This program finds the value of the node at a given position from the tail of a singly linked list. It first calculates 
+the length of the list, then traverses again to the node at the target position (counting from the head), and returns 
+its data. The main function handles multiple test cases, builds the lists from input, and outputs the results.
