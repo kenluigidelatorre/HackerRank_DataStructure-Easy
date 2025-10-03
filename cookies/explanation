@@ -1,0 +1,3 @@
+This function combines the two least sweet cookies repeatedly until all cookies reach at least sweetness k. It uses a sorted 
+set to efficiently get the smallest cookies, merges them into a new cookie with increased sweetness, counts the operations, 
+and returns the number of merges needed or -1 if it’s impossible to reach the target sweetness.
