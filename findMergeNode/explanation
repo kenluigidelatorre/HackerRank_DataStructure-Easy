@@ -1,0 +1,3 @@
+This program finds the data value where two singly linked lists merge. It creates two lists,
+connects them at a specified index to simulate merging, and then uses two pointers to traverse 
+the lists. When the pointers meet, it returns the merge point’s data.
