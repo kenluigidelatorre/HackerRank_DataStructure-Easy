@@ -1,0 +1,77 @@
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Result
+{
+
+    /*
+     * Complete the 'cookies' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER k
+     *  2. INTEGER_ARRAY A
+     */
+
+    public static int cookies(int k, List<int> A)
+    {
+    var minHeap = new SortedSet<(int sweetness, int index)>();
+    int idx = 0;
+    foreach (var sweetness in A) {
+        minHeap.Add((sweetness, idx++));
+    }
+    
+    int operations = 0;
+    
+    while (minHeap.Count > 1 && minHeap.Min.sweetness < k) {
+        var first = minHeap.Min;
+        minHeap.Remove(first);
+        var second = minHeap.Min;
+        minHeap.Remove(second);
+        
+        int combinedSweetness = first.sweetness + 2 * second.sweetness;
+        minHeap.Add((combinedSweetness, idx++));
+        operations++;
+    }
+    
+    if (minHeap.Count > 0 && minHeap.Min.sweetness >= k)
+        return operations;
+    else
+        return -1;
+    }
+
+}
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        string[] firstMultipleInput = Console.ReadLine().TrimEnd().Split(' ');
+
+        int n = Convert.ToInt32(firstMultipleInput[0]);
+
+        int k = Convert.ToInt32(firstMultipleInput[1]);
+
+        List<int> A = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(ATemp => Convert.ToInt32(ATemp)).ToList();
+
+        int result = Result.cookies(k, A);
+
+        textWriter.WriteLine(result);
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}
